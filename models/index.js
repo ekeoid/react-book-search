@@ -1,3 +1,3 @@
-index.module.exports = {
+module.exports = {
     Book: require("./book")
 };

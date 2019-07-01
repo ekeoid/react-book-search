@@ -7,16 +7,30 @@ function Navbar(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
-                Clicky Game
+                Google Books
             </Link>
 
-            <div className="navbar-nav ml-auto">
-                <li className="nav-item score">
-                    Score: <span>{props.score}</span>
+            <div className="navbar-nav">
+                <li className="nav-item">
+                    <Link
+                        to="/"
+                        className={
+                            window.location.pathname === "/" || window.location.pathname === "/search"
+                            ? "nav-link active"
+                            : "nav-link"
+                        }
+                    >
+                    Search
+                    </Link>
                 </li>
-                |
-                <li className="nav-item top-score">
-                    Top Score: {props.topScore}
+                
+                <li className="nav-item">
+                    <Link
+                        to="/discover"
+                        className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                    >
+                    Saved
+                    </Link>
                 </li>
             </div>
         </nav>
